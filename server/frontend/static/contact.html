@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="static/bootstrap.min.css">
+    <title>Contact Us - AutoDream</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #f8f9fa;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-left: 1rem;
+        }
+        .hero {
+            background-image: url('/placeholder.svg?height=400&width=800');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .contact-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .contact-card {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 1rem;
+        }
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        label, input, textarea {
+            display: block;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color:darkturquoise; height: 1in;">
+        <div class="container-fluid">
+            <h2 style="padding-right: 5%;">Dealerships</h2>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                <a class="nav-link active" style="font-size: larger;" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" style="font-size: larger;" href="/about">About Us</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" style="font-size: larger;" href="/contact">Contact Us</a>
+                </li>
+            </ul>
+            <span class="navbar-text">
+                <div class="loginlink" id="loginlogout">
+                </div>
+                </span>
+            </div>
+        </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Get in Touch</h1>
+            <p>Have questions or need assistance? Our team is here to help. Reach out to us today and experience the AutoDream difference.</p>
+            <button onclick="scrollToForm()">Contact Us Now</button>
+        </div>
+    </section>
+
+    <main class="container">
+        <h2>Our Departments</h2>
+        <div class="contact-options" id="contactOptions"></div>
+
+        <h2>Send Us a Message</h2>
+        <form id="contactForm">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </main>
+
+    <footer>
+        <div>
+            <h3>About AutoDream</h3>
+            <p>We are committed to providing the best car buying experience for our customers across Canada.</p>
+        </div>
+        <div>
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>Contact Information</h3>
+            <p>Phone: +1 (800) 123-4567</p>
+            <p>Email: info@autodream.ca</p>
+            <p>Address: 123 Car Street, Toronto, ON M5V 2T6</p>
+        </div>
+        <p>&copy; 2024 AutoDream. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const contactOptions = [
+            { icon: "📞", title: "Customer Service", phone: "+1 (800) 123-4567", email: "customerservice@autodream.ca" },
+            { icon: "📢", title: "Advertising", phone: "+1 (800) 234-5678", email: "advertising@autodream.ca" },
+            { icon: "💼", title: "Careers", phone: "+1 (800) 345-6789", email: "careers@autodream.ca" },
+            { icon: "🏢", title: "Become a Dealer", phone: "+1 (800) 456-7890", email: "dealerships@autodream.ca" },
+            { icon: "👥", title: "Investor Relations", phone: "+1 (800) 567-8901", email: "investors@autodream.ca" },
+            { icon: "❓", title: "Technical Support", phone: "+1 (800) 678-9012", email: "techsupport@autodream.ca" },
+        ];
+
+        function renderContactOptions() {
+            const container = document.getElementById('contactOptions');
+            contactOptions.forEach(option => {
+                const card = document.createElement('div');
+                card.className = 'contact-card';
+                card.innerHTML = `
+                    <h3>${option.icon} ${option.title}</h3>
+                    <p>📞 ${option.phone}</p>
+                    <p>✉️ ${option.email}</p>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function scrollToForm() {
+            const form = document.getElementById('contactForm');
+            form.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const formObject = Object.fromEntries(formData.entries());
+            console.log('Form submitted:', formObject);
+            this.reset();
+            alert('Thank you for your message. We will get back to you soon!');
+        });
+
+        document.addEventListener('DOMContentLoaded', renderContactOptions);
+    </script>
+</body>
+</html>
