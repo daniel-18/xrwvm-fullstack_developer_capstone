@@ -20,6 +20,13 @@ const Register = () => {
 
   const register = async (e) => {
     e.preventDefault();
+    console.log(JSON.stringify({
+            "userName": userName,
+            "password": password,
+            "firstName":firstName,
+            "lastName":lastName,
+            "email":email
+        }));
 
     let register_url = window.location.origin+"/djangoapp/register";
     
